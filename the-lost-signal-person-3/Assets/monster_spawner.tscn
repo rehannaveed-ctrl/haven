@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dn5kddxi3x221"]
+
+[ext_resource type="Script" uid="uid://c05jkaucj8ow5" path="res://monster_spawner.gd" id="1_jvgjp"]
+[ext_resource type="PackedScene" uid="uid://b0665yt6hmhxb" path="res://Assets/Monster/monster.tscn" id="2_xma7p"]
+
+[node name="MonsterSpawner" type="Node2D" unique_id=482930907]
+script = ExtResource("1_jvgjp")
+monster_scene = ExtResource("2_xma7p")
+
+[node name="SpawnPoint1" type="Marker2D" parent="." unique_id=1444339569]
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=53345144]
+
+[node name="SpawnPoint3" type="Marker2D" parent="." unique_id=501708337]
