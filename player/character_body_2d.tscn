@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cipr1x6gtkehj"]
+
+[ext_resource type="Script" uid="uid://cyuo10bj4pdhj" path="res://player.gd" id="1_dd465"]
+[ext_resource type="Texture2D" uid="uid://dgfb0wtgagqhw" path="res://hooded_player/idle/down/frame_00.png" id="2_lhvu3"]
+[ext_resource type="Texture2D" uid="uid://dqv3to3chi0k7" path="res://hooded_player/idle/down/frame_03.png" id="3_4sjlk"]
+[ext_resource type="Texture2D" uid="uid://h5b5kjwj0pd1" path="res://hooded_player/idle/down/frame_01.png" id="4_qp52p"]
+[ext_resource type="Texture2D" uid="uid://bl45l45rugv58" path="res://hooded_player/idle/down/frame_02.png" id="5_6ct3r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pd0tq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lhvu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4sjlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qp52p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6ct3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lhvu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qp52p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6ct3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4sjlk")
+}],
+"loop": 1,
+"name": &"idle_down",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+
+[sub_resource type="Gradient" id="Gradient_sweqy"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sweqy"]
+gradient = SubResource("Gradient_sweqy")
+width = 256
+height = 256
+fill = 1
+
+[node name="characterBody2D" type="CharacterBody2D" unique_id=1464990895]
+script = ExtResource("1_dd465")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1235163390]
+position = Vector2(106.5, -33.999992)
+scale = Vector2(5.28125, 5.6250005)
+sprite_frames = SubResource("SpriteFrames_pd0tq")
+animation = &"idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=428856532]
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1861470096]
+position = Vector2(6, 0)
+enabled = false
+position_smoothing_enabled = true
+
+[node name="Flsashlight" type="PointLight2D" parent="." unique_id=1767680109]
+color = Color(1, 1, 0.92941177, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_sweqy")
+texture_scale = 3.0
